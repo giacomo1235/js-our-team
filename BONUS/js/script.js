@@ -32,46 +32,67 @@ let arrGente = [
         name: 'Angela Caroll',
         role: 'Chief Editor',
     },
-
+    
 ];
-
-//console.log(arrGente[1]['name'])
-// expected: 'Walter Gordon'
 let teamContainer = document.querySelector('.team-container');
-
-for (let key in arrGente) {
-
-    teamContainer.innerHTML += `
-    <div class="team-card">
-        <div class="card-image">
-            <img src="img/${arrGente[key]['img']}" alt="${arrGente[key]['name']}"/>
+    
+    for (let key in arrGente) {
+    
+        teamContainer.innerHTML += `
+        <div class="team-card">
+            <div class="card-image">
+                <img src="img/${arrGente[key]['img']}" alt="${arrGente[key]['name']}"/>
+            </div>
+            <div class="card-text">
+                <h3>${arrGente[key]['name']}</h3>
+                <p>${arrGente[key]['role']}</p>
+            </div>
         </div>
-        <div class="card-text">
-            <h3>${arrGente[key]['name']}</h3>
-            <p>${arrGente[key]['role']}</p>
-        </div>
-    </div>
-  `
- 
-};
+      `
+     
+    };
+
 
 document.querySelector('button').addEventListener('click', function() {
 
     let inputName = document.getElementById('name');
     let inputRole = document.getElementById('role');
-    let inputImg = document.getElementById('img');
+    let inputImg = document.getElementById('image');
     let newGente = {
-        img:  'inputImg.value',//non so perche non vuole prendere la value per questo input
+        img:  inputImg.value,
         name: inputName.value,
         role: inputRole.value,
     };
 
-   
     arrGente.push(newGente);
-    console.log(arrGente);
    
-  
-  });
+    console.log(arrGente);
+    
+    
+    let teamContainer = document.querySelector('.team-container');
+
+    for (let key in arrGente) {
+    
+        teamContainer.innerHTML += `
+        <div class="team-card">
+            <div class="card-image">
+                <img src="img/${arrGente[key]['img']}" alt="${arrGente[key]['name']}"/>
+            </div>
+            <div class="card-text">
+                <h3>${arrGente[key]['name']}</h3>
+                <p>${arrGente[key]['role']}</p>
+            </div>
+        </div>
+      `
+     
+    };
+
+    
+    
+});
+//console.log(arrGente[1]['name'])
+// expected: 'Walter Gordon'
+
 
 
 
