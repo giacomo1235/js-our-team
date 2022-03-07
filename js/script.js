@@ -37,3 +37,16 @@ const arrGente = [
 
 console.log(arrGente[1]['name'])
 // expected: 'Walter Gordon'
+
+
+
+for (let key in arrGente) {
+    //console.log(arrGente[key])
+    //console.log(arrGente[key]['name'])
+    document.getElementById('name').innerHTML = `${arrGente[key]['name']}`;
+    document.getElementById('role').innerHTML = `${arrGente[key]['role']}`;
+    document.getElementById('image').innerHTML = `<img
+    src="img/${arrGente[key]['img']}"
+  />`;
+
+}
