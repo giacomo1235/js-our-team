@@ -35,18 +35,25 @@ const arrGente = [
 
 ];
 
-console.log(arrGente[1]['name'])
+//console.log(arrGente[1]['name'])
 // expected: 'Walter Gordon'
-
-
+let teamContainer = document.querySelector('.team-container');
 
 for (let key in arrGente) {
-    //console.log(arrGente[key])
-    //console.log(arrGente[key]['name'])
-    document.getElementById('name').innerHTML = `${arrGente[key]['name']}`;
-    document.getElementById('role').innerHTML = `${arrGente[key]['role']}`;
-    document.getElementById('image').innerHTML = `<img
-    src="img/${arrGente[key]['img']}"
-  />`;
 
-}
+    teamContainer.innerHTML += `
+    <div class="team-card">
+        <div class="card-image">
+            <img src="img/${arrGente[key]['img']}" alt="${arrGente[key]['name']}"/>
+        </div>
+        <div class="card-text">
+            <h3>${arrGente[key]['name']}</h3>
+            <p>${arrGente[key]['role']}</p>
+        </div>
+    </div>
+  `
+
+};
+
+
+
