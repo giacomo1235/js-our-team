@@ -1,6 +1,3 @@
-// const arrGente con dentro obj colleghi
-// for (key in arrGente ) { }
-
 let arrGente = [
     {
         img: 'wayne-barnett-founder-ceo.jpg',
@@ -32,13 +29,13 @@ let arrGente = [
         name: 'Angela Caroll',
         role: 'Chief Editor',
     },
-    
+
 ];
 let teamContainer = document.querySelector('.team-container');
-    
-    for (let key in arrGente) {
-    
-        teamContainer.innerHTML += `
+
+for (let key in arrGente) {
+
+    teamContainer.innerHTML += `
         <div class="team-card">
             <div class="card-image">
                 <img src="img/${arrGente[key]['img']}" alt="${arrGente[key]['name']}"/>
@@ -49,49 +46,42 @@ let teamContainer = document.querySelector('.team-container');
             </div>
         </div>
       `
-     
-    };
+
+};
 
 
-document.querySelector('button').addEventListener('click', function() {
+document.querySelector('button').addEventListener('click', function () {
 
     let inputName = document.getElementById('name');
     let inputRole = document.getElementById('role');
     let inputImg = document.getElementById('image');
     let newGente = {
-        img:  inputImg.value,
+        img: inputImg.value,
         name: inputName.value,
         role: inputRole.value,
     };
 
     arrGente.push(newGente);
-   
+
     console.log(arrGente);
-    
-    
+
+
     let teamContainer = document.querySelector('.team-container');
 
-    for (let key in arrGente) {
-    
-        teamContainer.innerHTML += `
+    teamContainer.innerHTML += `
         <div class="team-card">
             <div class="card-image">
-                <img src="img/${arrGente[key]['img']}" alt="${arrGente[key]['name']}"/>
+                <img src="${newGente['img']}" alt="${newGente['name']}"/>
             </div>
             <div class="card-text">
-                <h3>${arrGente[key]['name']}</h3>
-                <p>${arrGente[key]['role']}</p>
+                <h3>${newGente['name']}</h3>
+                <p>${newGente['role']}</p>
             </div>
         </div>
       `
-     
-    };
 
-    
-    
 });
-//console.log(arrGente[1]['name'])
-// expected: 'Walter Gordon'
+
 
 
 
