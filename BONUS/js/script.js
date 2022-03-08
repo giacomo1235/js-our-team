@@ -50,7 +50,7 @@ for (let key in arrGente) {
 };
 
 
-document.querySelector('button').addEventListener('click', function () {
+document.querySelector('button').addEventListener('click', function (event) {
 
     let inputName = document.getElementById('name');
     let inputRole = document.getElementById('role');
@@ -79,6 +79,7 @@ document.querySelector('button').addEventListener('click', function () {
             </div>
         </div>
       `
+ event.preventDefault();     
 
 });
 
